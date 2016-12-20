@@ -1,7 +1,6 @@
 require './lib/deck'
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'pry'
 
 class DeckTest < Minitest::Test
   def test_deck_exists
