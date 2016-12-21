@@ -7,8 +7,8 @@ class Hand
 
   def initialize
     @deck   = Deck.new
-    @dealer = Dealer.new
-    @player = Player.new
+    @dealer = Dealer.new(self)
+    @player = Player.new(self)
     initial_deal
   end
 
@@ -19,5 +19,19 @@ class Hand
     player.cards << deck.cards.pop
     dealer.cards << deck.cards.pop
     puts "The dealer is showing #{dealer.cards.first}\nYou were dealt #{player.cards.join(", ")}\nWoud you like to (H) Hit or (S) Stay?"
+    player_option
+  end
+
+  def player_option
+    response = gets.chomp
+    if response.downcase == "h"
+      player.hit
+    elsif response.downcase == "s"
+      puts "Your total is #{player.calculate_total}.  Let's see what the dealer has."
+    else
+      puts "Please select either (H) hit or (S) Stay."
+    end
   end
 end
+
+Hand.new
