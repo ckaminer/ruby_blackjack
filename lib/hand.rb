@@ -29,8 +29,19 @@ class Hand
     elsif response.downcase == "s"
       puts "Your total is #{player.calculate_total}.  Let's see what the dealer has."
       dealer.play
+      determine_result
     else
       puts "Please select either (H) hit or (S) Stay."
+    end
+  end
+
+  def determine_result
+    if dealer.total > 21
+      puts "The dealer busted. You won the hand!"
+    elsif player.total > dealer.total
+      puts "You had more than the dealer without busting and won the hand!"
+    else
+      puts "The dealer scored more than you.  You lost the hand."
     end
   end
 end

@@ -2,7 +2,7 @@ require_relative "value_lookup"
 
 class Dealer
   include ValueLookup
-  attr_accessor :cards, :hand
+  attr_accessor :cards, :hand, :total
 
   def initialize(hand)
     @cards = []
