@@ -28,6 +28,7 @@ class Hand
       player.hit
     elsif response.downcase == "s"
       puts "Your total is #{player.calculate_total}.  Let's see what the dealer has."
+      dealer.play
     else
       puts "Please select either (H) hit or (S) Stay."
     end
