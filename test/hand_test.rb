@@ -1,4 +1,4 @@
-require './lib/hand'
+require_relative '../lib/hand'
 require 'minitest/autorun'
 require 'minitest/pride'
 

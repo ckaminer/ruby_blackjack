@@ -15,7 +15,7 @@ class Dealer
     until @total > 16 do
       new_card = hand.deck.cards.pop
       cards << new_card
-      @total += VALUE_LOOKUP[new_card.upcase]
+      @total += card_value(new_card)
     end
     puts "The dealer has #{@total}."
   end
@@ -23,7 +23,7 @@ class Dealer
   def calculate_total
     @total = 0
     cards.each do |card|
-      @total += VALUE_LOOKUP[card.upcase]
+      @total += card_value(card)
     end
   end
 end

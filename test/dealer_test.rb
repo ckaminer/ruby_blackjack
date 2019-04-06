@@ -1,4 +1,4 @@
-require './lib/dealer'
+require_relative '../lib/dealer'
 require 'minitest/autorun'
 require 'minitest/pride'
 

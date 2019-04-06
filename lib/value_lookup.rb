@@ -12,4 +12,8 @@ module ValueLookup
                   "Q"  => 10,
                   "K"  => 10,
                   "A"  => 11}
+
+  def card_value(card)
+    VALUE_LOOKUP[card.chop]
+  end
 end

@@ -4,7 +4,7 @@ class Player
   include ValueLookup
   attr_accessor :cards, :hand, :total
 
-  def initialize(hand)
+  def initialize(hand = nil)
     @cards = []
     @hand  = hand
     @total = 0
@@ -24,7 +24,7 @@ class Player
   def calculate_total
     @total = 0
     cards.each do |card|
-      @total += VALUE_LOOKUP[card.upcase]
+      @total += card_value(card.upcase)
     end
     @total
   end
